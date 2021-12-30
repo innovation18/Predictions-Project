@@ -6,3 +6,11 @@ Forwarding from [::1]:8000 -> 80
 Handling connection for 8000
 Handling connection for 8000
 E1230 14:31:39.592735   13941 portforward.go:234] lost connection to pod
+
+Thu 30 Dec 2021 18:56:57 IST
+Resubmitting Project
+Thu 30 Dec 2021 18:57:08 IST
+deployment.apps/predictions-app created
+NAME                              READY   STATUS              RESTARTS   AGE
+predictions-app-565445489-6kzvx   0/1     ContainerCreating   0          22s
+error: unable to forward port because pod is not running. Current status=Pending

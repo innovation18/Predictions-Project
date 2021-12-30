@@ -10,3 +10,65 @@ predictions-app-565445489-jx7sb   1/1     Running   0          21s
 Forwarding from 127.0.0.1:8000 -> 80
 Forwarding from [::1]:8000 -> 80
 Handling connection for 8000
+Thu 30 Dec 2021 18:56:20 IST
+Resubmitting Project
+Thu 30 Dec 2021 18:56:47 IST
+
+
+
+bash-3.2$ echo `date` >> kubernetes_out.txt 
+bash-3.2$ echo 'Resubmitting Project' >> kubernetes_out.txt 
+bash-3.2$ echo `date` >> kubernetes_out.txt 
+bash-3.2$ 
+bash-3.2$ echo `date` >> nohup.out 
+bash-3.2$ echo 'Resubmitting Project' >> nohup.out 
+bash-3.2$ echo `date` >> nohup.out 
+bash-3.2$ 
+bash-3.2$ nohup ./run_kubernetes.sh &
+[1] 15834
+bash-3.2$ appending output to nohup.out
+
+bash-3.2$ tail -f nohup.out 
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+Handling connection for 8000
+E1230 14:31:39.592735   13941 portforward.go:234] lost connection to pod
+
+Thu 30 Dec 2021 18:56:57 IST
+Resubmitting Project
+Thu 30 Dec 2021 18:57:08 IST
+deployment.apps/predictions-app created
+NAME                              READY   STATUS              RESTARTS   AGE
+predictions-app-565445489-6kzvx   0/1     ContainerCreating   0          22s
+error: unable to forward port because pod is not running. Current status=Pending
+^C
+[1]+  Exit 1                  nohup ./run_kubernetes.sh
+bash-3.2$ kubectl get pods
+NAME                              READY   STATUS    RESTARTS   AGE
+predictions-app-565445489-6kzvx   1/1     Running   0          81s
+bash-3.2$ kubectl port-forward deployment/predictions-app 8000:80
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+
+
+
+-->> ./make_prediction output
+
+
+bash-3.2$ date
+Thu 30 Dec 2021 18:59:13 IST
+bash-3.2$ kubectl get pods
+NAME                              READY   STATUS    RESTARTS   AGE
+predictions-app-565445489-6kzvx   1/1     Running   0          2m6s
+bash-3.2$ ./make_prediction.sh 
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+bash-3.2$ 
+
+
