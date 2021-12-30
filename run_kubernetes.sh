@@ -9,6 +9,7 @@ dockerpath=hanisharora/predictions-app
 # Step 2
 # Run the Docker Hub container with kubernetes
 kubectl create deployment predictions-app --image=hanisharora/predictions-app
+sleep 20
 
 # Step 3:
 # List kubernetes pods
