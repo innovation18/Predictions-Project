@@ -21,7 +21,7 @@ curl -d '{
       "0":396.9
    },
    "LSTAT":{  
-      "0":4.98
+      "0":10.98
    }
 }'\
      -H "Content-Type: application/json" \
