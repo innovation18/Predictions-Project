@@ -1,0 +1,8 @@
+deployment.apps/predictions-app created
+NAME                              READY   STATUS    RESTARTS   AGE
+predictions-app-565445489-jx7sb   1/1     Running   0          21s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+Handling connection for 8000
+E1230 14:31:39.592735   13941 portforward.go:234] lost connection to pod
