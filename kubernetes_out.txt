@@ -1,0 +1,12 @@
+bash-3.2$ touch kubernetes_out.txt 
+bash-3.2$ nohup ./run_kubernetes.sh &
+[1] 13905
+bash-3.2$ appending output to nohup.out
+
+bash-3.2$ tail -f nohup.out 
+deployment.apps/predictions-app created
+NAME                              READY   STATUS    RESTARTS   AGE
+predictions-app-565445489-jx7sb   1/1     Running   0          21s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
